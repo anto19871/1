@@ -53,7 +53,7 @@ echo	 "\e[32;1m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬�
         save("token.txt",$token); 
         echo color("yellow","\n============AUTO CLAIM 20K===========");
         echo "\n".color("green","VOUCHER 20K");
-        echo "\n".color("yellow"," SabarYa");
+        echo "\n".color("yellow","please wait");
         for($a=1;$a<=3;$a++){
         echo color("yellow",".");
         sleep(35);
@@ -98,9 +98,9 @@ echo	 "\e[32;1m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬�
         $voucher4 = getStr1('"title":"','",',$cekvoucher,"4");
         echo "\n".color("white"," Total voucher ".$total." : ");
         echo "\n".color("yellow"," 1. ".$voucher1);
-        echo "\n".color("green"," 2. ".$voucher2);
+        echo "\n".color("yellow"," 2. ".$voucher2);
         echo "\n".color("yellow"," 3. ".$voucher3);
-        echo "\n".color("green"," 4. ".$voucher4);
+        echo "\n".color("yellow"," 4. ".$voucher4);
         echo"\n";
         $expired1 = getStr1('"expiry_date":"','"',$cekvoucher,'1');
         $expired2 = getStr1('"expiry_date":"','"',$cekvoucher,'2');
