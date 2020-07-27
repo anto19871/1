@@ -23,6 +23,19 @@ echo "\n".color("red","Claim Voucher?: y/n ");
         }else{
         echo "\n".color("white"," Message: ".$message);
         sleep(1);
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"MAUGOFOOD2107"}');
+        $message = fetch_value($code1,'"message":"','"');
+        if(strpos($code1, 'Promo kamu sudah bisa dipakai.')){
+        echo "\n".color("green","Message: ".$message);
+        goto gofood;
+        }else{
+        echo "\n".color("green"," Message: ".$message);
+        gofood:
+        echo "\n".color("white","NUL");
+        echo "\n".color("white"," Skipp");
+        for($a=1;$a<=3;$a++){
+        echo color("green",".");
+        sleep(0);
         $cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=10&page=1', $token);
         $total = fetch_value($cekvoucher,'"total_vouchers":',',');
         $voucher1 = getStr1('"title":"','",',$cekvoucher,"1");
